@@ -1,0 +1,57 @@
+<html>
+<head>
+    <script src="./gl-matrix-min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>TP Note WebGL Damien LECRONTE</title>
+</head>
+
+<body onload='main()'>
+    <canvas id='dawin-webgl' width=800 height=800>
+    </canvas>
+    <aside>
+        <h2>Parametres</h2><br>
+        <span>Pour reinitialiser les valeurs par defaut double clic sur le point</span>
+        <hr>
+        <form id="settingsForm" class="disHighlight">
+            <h2>Translation</h2>
+            <div class="slidecontainer">
+                translation x : <span id="txValue">0</span> <input ondblclick='resetInput("tx")' type="range" min="-10" max="10"
+                    step="0.1" value="0" class="slider" id="tx"><br>
+                translation y : <span id="tyValue">0</span> <input ondblclick='resetInput("ty")' type="range" min="-10" max="10"
+                    step="0.1" value="0" class="slider" id="ty"><br>
+                translation z : <span id="tzValue">0</span> <input ondblclick='resetInput("tz")' type="range" min="-10" max="10"
+                    step="0.1" value="0" class="slider" id="tz"><br>
+            </div>
+            <h2>Rotation</h2>
+            <div class="slidecontainer">
+                rotation x : <span id="rxValue">0</span> <input ondblclick='resetInput("rx")' type="range" min="-3.14" max="3.14"
+                    step="0.01" value="0" class="slider" id="rx"><br>
+                rotation y : <span id="ryValue">0</span> <input ondblclick='resetInput("ry")' type="range" min="-3.14" max="3.14"
+                    step="0.01" value="0" class="slider" id="ry"><br>
+                rotation z : <span id="rzValue">0</span> <input ondblclick='resetInput("rz")' type="range" min="-3.14" max="3.14"
+                    step="0.01" value="0" class="slider" id="rz"><br>
+            </div>
+            <h2>Camera</h2>
+            <div class="slidecontainer">
+                zoomer  : <span id="zoomValue">1</span> <input ondblclick='resetInput("zoom")' type="range" min="0.1" max="5"
+                    step="0.1" value="1" class="slider" id="zoom"><br>
+                FOV : <span id="FOVValue">30</span> degres
+                <input ondblclick='resetInput("FOV")' type="range" min="30" max="120" step="0.1" value="30" class="slider"
+                    id="FOV"><br>
+            </div>
+            <h2>Couleur</h2>
+            <div id="colors">
+                <span>face du dessus:</span> <input type="color" class="color" colorPosition="1" value="#66b2cc"><br>
+                <span>face du dessous:</span> <input type="color" class="color" colorPosition="2" value="#66b2cc"><br>
+                <span>face du haut:</span> <input type="color" class="color" colorPosition="3" value="#66b2cc"><br>
+                <span>face du bas:</span> <input type="color" class="color" colorPosition="4" value="#66b2cc"><br>
+                <span>face de droite:</span> <input type="color" class="color" colorPosition="5" value="#66b2cc"><br>
+                <span>face de gauche:</span> <input type="color" class="color" colorPosition="6" value="#66b2cc"><br>
+            </div>
+            <br><button onclick='reset("rx")'>reinitialiser les couleurs</button>
+        </form>
+    </aside>
+    <script src='tpnote.js'></script>
+</body>
+
+</html>
